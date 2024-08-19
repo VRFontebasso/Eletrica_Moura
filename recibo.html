@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo Pagamento</title>
+    <link rel="stylesheet" href="recibo01.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    
+
+    <style>
+        table {
+            width: 96%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            font-size: medium;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .receipt h1 {
+            text-align: center;
+        }
+        .footer p {
+            margin-top: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #000;
+        }
+        #add-product-btn {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #add-product-btn:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container" style="display: block;">
+        <div class="dados">
+            <h1 style="text-align: center;">Recibo de Serviço</h1>
+            <br/>
+            
+            <label for="data">Data de hoje: 
+            <input type="text" id="data" style="width: 25%;"></label>
+
+            <label for="numero">ID da ordem de serviço: 
+            <input type="text" id="numero" style="width: 33%;"/></label>
+
+            <label for="empresa">Nome da empresa: 
+            <input style="width: 68%;" type="text" id="empresa"/></label>
+
+            <label for="estad1">INS. Estadual:
+            <input type="text" style="width: 53%;" id="estad1"></label>
+
+            <label for="ins1">INS. Municipal:
+            <input type="text" style="width: 23%;" id="ins1"></label>
+
+            <label for="cnpj">CNPJ:
+            <input type="text" id="cnpj" style="width: 32%;"/></label>
+
+            <label for="ctt">Contato:
+            <input type="text" id="ctt" style="width: 60%;"></label>
+
+            <label for="tel">Telefone:
+            <input type="text" id="tel" style="width: 29%;"></label>
+
+            <label for="mail">E-mail:
+            <input type="text" id="mail" style="width: 67%;"></label>
+
+            <label for="endere">Endereço:
+            <input type="text" id="endere" style="width: 77%;"></label>
+
+            <label for="cidad">Cidade:
+            <input type="text" id="cidad" style="width: 30%;"></label>
+
+            <label for="estada_reg">Estado:
+            <input type="text" id="estada_reg" style="width: 64%;"></label>
+
+            <br/>
+            <hr>
+            <br/>
+
+            <div id="items-container">
+                <label for="valor">ITEM: &emsp;
+                <input type="text" id="texto_descricao0" style="width: 78%;"></label>
+                <label for="valor">ID: &emsp;&emsp;
+                <input type="text" id="id_descricao0" style="width: 79%;"></label>
+                <label for="valor">DESCRIÇÃO: &emsp;
+                <input type="text" id="descricao_descricao0" style="width: 71%;"></label>
+                <label for="valor">VALOR A SER COBRADO: &emsp;
+                <input type="text" id="valor0" style="width: 30%;"></label>
+                <br/><hr><br/>
+            </div>
+            
+            <button id="add-product-btn">Adicionar Produto</button>
+            <button id="generate-pdf-btn">Gerar Recibo</button>
+        </div>
+    </div>
+
+    <div id="recibo-container" >
+        <div class="receipt">
+            <h1>Recibo de Pagamento</h1>
+            <div class="details">
+                <br/>
+                <p>Ismael Coelho de Moura - ME</p>
+                <p>CNPJ: 07.461.005/0001-60</p> 
+                <br/><br/>
+                <p>Guarulhos, <span id="data_recibo"></span></p>
+                <br/>
+                
+                <table>
+                    <strong>Empresa: </strong> <span id="recibo_empresa"></span>
+                    <br/><br/>
+                    <strong>ID de serviço: </strong> <span id="recibo_numero"></span>
+                    <br/><br/>
+                    <tr>
+                        <td><strong>CNPJ:</strong> <span id="recibo_cnpj"></span></td>
+                        <td><strong>Ins. Mun:</strong> <span id="ins_mun"></span></td>
+                        <td><strong>Ins. Est:</strong> <span id="ins_est"></span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contato:</strong> <span id="ctt_contato"></span></td>
+                        <td><strong>Tel. :</strong> <span id="tel_telefone"></span></td>
+                        <td><strong>E-mail:</strong> <span id="mail_email"></span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Endereço:</strong> <span id="endere_endere"></span></td>
+                        <td><strong>Cidade:</strong> <span id="cidad_cidade"></span></td>
+                        <td><strong>Estado:</strong> <span id="esta_estado"></span></td>
+                    </tr>
+                </table>
+                <br/><hr>
+            </div>
+            <div class="items">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>ID</th>
+                            <th>Descrição</th>
+                            <th>Valor total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recibo-items"></tbody>
+                </table> 
+            </div>
+            <div class="details">
+                <div>
+                    <span><strong>Valor total : R$ <span id="recibo_valor"></span> </strong></span>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Observações:</p>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+</html>

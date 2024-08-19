@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem de Serviço</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="impressao.js"></script>
+    <script src="script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/selectize/dist/css/selectize.default.css" rel="stylesheet" />
+
+    <style>
+        *{
+            margin: 0 auto;
+            pad: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul class="menu">
+    
+                <li><a href="index.html">MENU </a></li>
+                <li>
+                    <a href="#">Ordem de Serviço</a>
+                    <ul class="submenu">
+                        <li><a href="primeiro_cadastro.html">Ficha Entrada</a></li>
+                        <li><a href="ficha_eletrica.html">Ficha Elétrica</a></li>
+                        <li><a href="ficha_mecanica.html">Ficha Mecânica</a></li>
+                        <li><a href="anotacao.html">Ficha Anotação</a></li>
+                        <li><a href="ficha_saida.html">Ficha Saída</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Recibo</a>
+                    <ul class="submenu">
+                        <li><a href="recibo.html" target="_blank">Serviço</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="estoque.html">Controle de estoque</a></li>&emsp;&emsp;&emsp;
+                <li><button id="generate-pdf" >SALVAR</button></li> &emsp;&emsp;
+                <button class="fechar" onclick="fechar()">Fechar</button>
+            </ul>
+        </nav>
+    </header>
+    
+<script>
+    function fechar() {
+      // Fecha a janela do navegador.
+      window.close();
+    }
+</script>
+
+<br/>
+
+<div id="conteudoTotal">
+
+<form id="ordemServicoForm" method="post" >
+    
+    <div class="moura"><img src="Capturar.PNG" alt="img moura" width="30%"></div>
+    <h1 class="dadosEntrada">DADOS DE ENTRADA DE EQUIPAMENTO</h1>
+
+
+
+    <div class="formulario">
+
+        &emsp;&emsp;
+
+        <label for="identificacao">ID:</label>
+        <input type="text" id="indenti" name="ident_name" required>
+        <br/>
+
+        &emsp;&emsp;
+    <label for="cliente">Empresa/Cliente:</label>&emsp;&ensp;&ensp;
+    <input type="text" id="cliente" name="cliente" required><br/>
+
+        &emsp;&emsp;
+
+    <label for="cpf_cnpj">CNPJ/CPF:</label>
+    <input type="text" id="cpf_cnpj" name="cpf_cnpj" required>&emsp;
+ 
+    
+    
+    <label for="telefone">Nome:</label>
+    <input type="text" id="telefone" name="telefone" required>
+    <br/>
+
+        &emsp;&emsp;
+
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" name="endereco" required>&emsp;
+
+    
+    <label for="num">Telefone:</label>
+    <input type="text" id="num" name="num" required><br/>
+
+         &emsp;&emsp;
+
+    <label for="recebido">Recebido por:</label>  &emsp;&emsp;&emsp;
+    <input type="text" id="recebido" name="recebido" required>
+
+    <br/>
+
+        &emsp;&emsp;
+
+    <label for="email">Contato (email):</label>
+    <input type="text" id="email" name="email" required>
+
+    &emsp;&emsp;&emsp;&emsp;&emsp;
+    
+    <label for="entrada">Data de Entrada:</label>
+    <input type="date" id="entrada" name="entrada" required>
+
+
+    <br/><br/>
+
+    
+    <h2 class="equip">Equipamento</h2>
+
+    <br/><br/>
+
+    <label class="picture" for="picture__input" tabIndex="0">
+        <span class="picture__image"></span>
+      </label>
+
+      &emsp;&emsp;
+
+      <label for="equipamento">Equipamento:</label>&ensp;
+    <input list="equipamentos" type="text" name="equipamento" id="equipamento">
+    
+    <datalist id="equipamentos">
+        <option value="Motor Completo">&emsp;</option>
+        <option value="Estator">&emsp;</option>
+        <option value="Motobomba">&emsp;</option>
+        <option value="Gerador">&emsp;</option>
+        <option value="Transformador">&emsp;</option>
+        <option value="Solenóide, Base Magnética e Bobina">&emsp;</option>
+        <option value=" ">OUTROS, ESPECIFIQUE&emsp;</option>
+        
+    </datalist>
+
+    <br/>
+
+    &emsp;&emsp;
+
+    <label for="marca">Marca:</label>&emsp;&emsp;&emsp;&ensp;&ensp;
+    <input list="marcas" type="text" name="marca" id="marca">
+    
+    <datalist id="marcas">
+        <option value="Weg">WEG&emsp;</option>
+        <option value="Eberle">EBERLE&emsp;</option>
+        <option value="Buffalo">BUFFALO&emsp;</option>
+        <option value="Siemens">SIEMENS&emsp;</option>
+        <option value="Nova">NOVA&emsp;</option>
+        <option value="Kobalch">KOBALCH&emsp;</option>
+        <option value="ABB">ABB&emsp;</option>
+        <option value="Hercules">HERCULES&emsp;</option>
+        <option value="Schineider">SCHINEIDER&emsp;</option>
+        <option value="KSB">KSB&emsp;</option>
+        <option value="ABS Sulze">ABS SULZE&emsp;</option>
+        <option value="Thebe">THEBE&emsp;</option>
+        <option value="Dancor">DANCOR&emsp;</option>
+        <option value="Eletroplas">ELETROPLAS&emsp;</option>
+        <option value="Stanford">STANFORD&emsp;</option>
+        <option value="Negrini">NEGRINI&emsp;</option>
+        <option value="Cramaco">CRAMACO&emsp;</option>
+        <option value="Toyama">TOYAMA&emsp;</option>
+        <option value="KVA">KVA&emsp;</option>
+        <option value=" ">OUTROS, ESPECIFIQUE&emsp;</option>
+
+        
+    </datalist>
+
+
+    <br/>
+
+    &emsp;&emsp;
+
+    <label for="modelo">Modelo:</label>&emsp;&emsp;&ensp;&ensp;&ensp;
+    <input type="text" name="modelo" id="modelo">
+
+
+    <br/>
+
+    &emsp;&emsp;
+
+    <label for="tensao">Tensão:</label>&emsp;&emsp;&ensp;&ensp;&ensp;
+    <input list="tensa" type="text" name="tensao" id="tensao">
+    
+    <datalist id="tensa">
+        <option value="110V Monofásico">&emsp;</option>
+        <option value="220V Monofásico">&emsp;</option>
+        <option value="Bivolt Monofásico">&emsp;</option>
+        <option value="220v Trifásico">&emsp;</option>
+        <option value="380V Trifásico">&emsp;</option>
+        <option value="440V Trifásico">&emsp;</option>
+        <option value="660V Trifásico">&emsp;</option>
+        <option value="220V/380V Trifásico">&emsp;</option>
+        <option value="380V/660V Trifásico">&emsp;</option>
+        <option value="220V/380V/440V/660V Trifásico">&emsp;</option>
+        
+    </datalist>
+
+    <br/>
+
+    &emsp;&emsp;
+
+    <label for="rpm">RPM:</label>&emsp;&emsp;&emsp;&emsp;&ensp;
+    <input list="rp" type="text" name="rpm" id="rpm">
+    
+    <datalist id="rp">
+        <option value="2 Polos">2 Polos&emsp;</option>
+        <option value="4 Polos">4 Polos&emsp;</option>
+        <option value="6 Polos">6 Polos&emsp;</option>
+        <option value="8 Polos">8 Polos&emsp;</option>
+        <option value="10 Polos">10 Polos&emsp;</option>
+        <option value="12 Polos">12 polos&emsp;</option>
+    </datalist>
+
+    <br/>
+
+    &emsp;&emsp;
+
+    <label for="potencia">Potência:</label>&emsp;&emsp;&ensp;
+
+    <input type="text" name="potencia" id="potencia">
+
+    &emsp;
+    <input list="potenci" type="text" name="potencia" id="potencia">
+
+    <datalist id="potenci">
+        <option value="CV">&emsp;</option>
+        <option value="KVA">&emsp;</option>
+        <option value="KW">&emsp;</option>
+        <option value="W">&emsp;</option>
+    </datalist>
+
+    <h6>Unidade</h6>
+
+
+    <br/><br/>
+
+    &emsp;&emsp;
+    
+<label for="descricao">Descrição do Equipamento:</label>
+    <br/><br/>
+
+    &emsp;&emsp;
+
+   <textarea id="descricao" name="descricao" rows="4" required class="descricao"></textarea>
+
+      
+      <input type="file" name="picture__input" id="picture__input">
+      
+      <span id="espaco"><br/><br/><br/><br/><br/><br/></span>
+    </div>
+
+
+
+      <script>
+        document.getElementById("ordemServicoForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+    
+            // Recupera os valores do formulário
+            var cliente = document.getElementById("cliente").value;
+            var cliente = document.getElementById("email").value;
+            var endereco = document.getElementById("telefone").value;
+            var telefone = document.getElementById("cnpj").value;
+            var descricao = document.getElementById("nf").value;
+            var espaco = document.getElementById("espaco").value;
+
+
+
+            // Aqui você pode processar os dados (por exemplo, enviar para um servidor)
+            // Neste exemplo, apenas exibimos os valores na console
+            console.log("cliente: " + cliente);
+            console.log("email: " + email);
+            console.log("telefone: " + telefone);
+            console.log("cnpj: " + cnpj);
+            console.log("nf: " + nf);
+            console.log("espaco: " + nf);
+
+
+    
+            // Limpa o formulário após o envio
+            document.getElementById("ordemServicoForm").reset();
+        });
+    
+        document.getElementById("gerarPDF").addEventListener("click", function() {
+            var element = document.getElementById('ordemServicoForm');
+            html2pdf(element);
+        });
+    </script>
+
+
+    <script>
+const inputFile = document.querySelector("#picture__input");
+const pictureImage = document.querySelector(".picture__image");
+const pictureImageTxt = "FOTO DO MOTOR";
+pictureImage.innerHTML = pictureImageTxt;
+
+inputFile.addEventListener("change", function (e) {
+  const inputTarget = e.target;
+  const file = inputTarget.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function (e) {
+      const readerTarget = e.target;
+
+      const img = document.createElement("img");
+      img.src = readerTarget.result;
+      img.classList.add("picture__img");
+
+      pictureImage.innerHTML = "";
+      pictureImage.appendChild(img);
+    });
+
+    reader.readAsDataURL(file);
+  } else {
+    pictureImage.innerHTML = pictureImageTxt;
+  }
+});
+    </script>  
+
+
+    
+</form>
+
+<script>
+    document.getElementById("ordemServicoForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Impede o envio do formulário
+
+        // Recupera os valores do formulário
+        var cliente = document.getElementById("cliente").value;
+        var email = document.getElementById("email").value;
+        var telefone = document.getElementById("telefone").value;
+        var cnpj = document.getElementById("cnpj").value;
+        var nf = document.getElementById("nf").value;
+
+        var recebido = document.getElementById("recebido").value;
+        var rpm = document.getElementById("rpm").value;
+        var  marca = document.getElementById("marca").value;
+        var  modelo = document.getElementById("modelo").value;
+        var  potencia = document.getElementById("potencia").value;
+        var  tensao = document.getElementById("tensao").value;
+        var  tipo = document.getElementById("tipo").value;
+        var  descricao = document.getElementById("descricao").value;
+        var  espaco = document.getElementById("espaco").value;
+
+        // Aqui você pode processar os dados (por exemplo, enviar para um servidor)
+        // Neste exemplo, apenas exibimos os valores na console
+        console.log("cliente: " + cliente);
+        console.log("email: " + email);
+        console.log("telefone: " + telefone);
+        console.log("cnpj: " + telefone);
+        console.log("nf: " + descricao);
+
+        console.log("recibo: " + recibo);
+        console.log("rpm: " + rpm);
+        console.log("marca: " + marca);
+        console.log("modelo: " + modelo);
+        console.log("potencia: " + potencia);
+        console.log("tensao: " + tensao);
+        console.log("tipo: " + tipo);
+        console.log("descricao: " + descricao);
+        console.log("espaco: " + espaco);
+
+        // Limpa o formulário após o envio
+        document.getElementById("ordemServicoForm").reset();
+        document.getElementById("picture__input").reset();
+    });
+
+
+</script>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+.dados{
+    position: relative;
+    left: 2%;
+/*
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 10px;
+    */
+}
+
+.dados label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dados input[type="text"],
+.dados input[type="number"],
+.dados input[type="date"],
+.dados input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+
+
+.dados button:hover {
+    background-color: #45a049;
+}
+
+
+.print{
+    display: none;
+
+}
+
+#recibo-container{
+    display: none;
+}
+
+.assinatura{
+    text-align: center;
+}
+
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+                     
+            .receipt h1 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .receipt .details, .receipt .items, .receipt .total {
+                margin-bottom: 20px;
+            }
+            .receipt .details div, .receipt .total div {
+                display: flex;
+                justify-content: space-between;
+            }
+            .receipt .items table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .receipt .items th, .receipt .items td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            .receipt .items th {
+                background-color: #f8f8f8;
+            }
+            .receipt .total {
+                font-weight: bold;
+            }
+            .receipt .footer {
+                text-align: center;
+                margin-top: 20px;
+                font-size: 0.9em;
+                color: #888;
+            }
+
+            #numero2{
+                position: absolute;
+                left: 45%;
+                top: 75px;
+            }
+
+            #estadual1{
+                position: absolute;
+                left: 49%;
+                top: 185px;
+            }
+
+            #contato1{
+                position: absolute;
+                left: 55%;
+                top: 240px;
+            }
+
+            #email1{
+                position: absolute;
+                left: 55%;
+                top: 295px;
+            }
+
+            #estado1{
+                position: absolute;
+                left: 55%;
+                top: 406px;
+            }
+
+@media print{
+    .print{
+        display: block;
+    }
+
+    .dados{
+        display: none;
+    }
+}

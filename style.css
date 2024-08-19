@@ -1,0 +1,675 @@
+       
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 0;
+
+        }
+        .header {
+            background-color: #005cfb;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            display: inline-block;
+            position: relative;
+        }
+        .menu li a {
+          color: #fff;
+          text-decoration: none;
+          padding: 10px 15px;
+          display: block;
+          font-size: x-large;
+          font-family: inherit;
+        }
+        .menu li:hover > ul {
+            display: block;
+        }
+        .submenu {
+          display: none;
+          position: absolute;
+          background-color:  #005cfb;
+          padding: 0;
+          margin: 0;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+          z-index: 1; /* menu sobreposto */
+        }
+        .submenu li {
+            display: block;
+        }
+        .submenu li a {
+            color: #fff;
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+
+        }
+
+       .texto{
+        position: absolute;
+        left: 20px;
+        top: 100px;
+       }
+
+       #picture__input {
+  display: none;
+}
+
+.picture {
+  width: 300px;
+  aspect-ratio: 16/9;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border: 2px dashed currentcolor;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: color 300ms ease-in-out, background 300ms ease-in-out;
+  outline: none;
+  overflow: hidden;
+}
+
+.picture:hover {
+  color: #777;
+  background: #ccc;
+}
+
+.picture:active {
+  border-color: turquoise;
+  color: turquoise;
+  background: #eee;
+}
+
+.picture:focus {
+  color: #777;
+  background: #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.picture__img {
+  max-width: 100%;
+}
+
+
+
+object{
+    position: relative;
+    left: 30px;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 10px;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+label {
+    font-weight: bold;
+}
+
+button {
+  color: rgb(1, 1, 1);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+#ordemServicoForm {
+    margin: 10px;
+}
+
+form{
+  font-size: 90%;
+}
+
+input[type="text"], textarea {
+  width: 15%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid  rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  font-size: medium;
+}
+input[name="email"], textarea {
+  width: 37%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  font-size: medium;
+}
+input[name="cpf_cnpj"], textarea {
+  width: 19%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+input[name="cliente"], textarea {
+  width: 68%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+input[name="telefone"], textarea {
+  width: 51%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+input[name="num"], textarea {
+  width: 32%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+input[name="endereco"], textarea {
+  width: 37%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+input[name="recebido"], textarea {
+  width: 70%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+input[name="email"], textarea {
+  width: 36%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+input[name="entrada"], textarea {
+  width: 13%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="equipamento"], textarea {
+  width: 30%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="marca"], textarea {
+  width: 30%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="modelo"], textarea {
+  width: 30%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="tensao"], textarea {
+  width: 30%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="rpm"], textarea {
+  width: 30%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="potencia"], textarea {
+  width: 14%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="cortador"], textarea {
+  width: 28%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="recebidos"], textarea {
+  width: 28%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="canais"], textarea {
+  width: 20%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+#descricao{
+  position: relative;
+  height: 200px;
+  width: 80%;
+  font-size: medium;
+  font-family: Arial, sans-serif;;
+}
+
+#estra{
+  position: relative;
+  height: 150px;
+  width: 80%;
+  font-size: medium;
+  font-family: Arial, sans-serif;;
+}
+
+.picture {
+  position: absolute;
+  left: 56%;
+  width: 250px;
+  height: 250px;
+  top: 450px;
+  }
+
+  button{
+    width: 105px;
+    height: 50px;
+    font-size: large;
+    }
+
+
+    .dadosEntrada{
+      position: absolute;
+      left: 25%;
+      padding: 10px;
+      text-align: center;
+      font-size: xx-large;
+      font-family: initial;
+      color: #0400fb;
+  }
+
+  .nomeP{
+    position: relative;
+    top: -260px;
+  }
+
+  .moura{
+    position: absolute;
+    left: 10%;
+
+}
+
+.equip{
+  font-family: initial;
+  font-size: xx-large;
+  text-align: center;
+
+
+}
+
+.formulario{
+  position: relative;
+  top: 170px;
+}
+
+h2{
+  text-align: center;
+  background-color: #cdcbcb;
+  padding: 5px;
+}
+
+p{
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: larger;
+}
+
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+
+/* Estilos para os inputs */
+input[name="passoAux"] {
+  width: 80%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+input[name="fioAux"] {
+  width: 80%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+input[name="espirasAux"] {
+  width: 80%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+input[name="passoPrin"] {
+  width: 80%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+input[name="fioPrin"] {
+  width: 80%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+input[name="espirasPrin"] {
+  width: 80%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 35%;
+  position: relative;
+  left: 240px;
+}
+
+input[name="potenciaTri"], textarea {
+  width: 12%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="tensaoTri"], textarea {
+  width: 16%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="rpmTri"], textarea {
+  width: 12%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+
+}
+
+#formularioEleTrif{
+  display: none;  
+}
+
+
+.dadosEletricosOrigi{
+  position: relative;
+  bottom: 250px;
+
+  right: 23%;
+  width: 50%;
+}
+
+#outrosEletri{
+  display: none;
+}
+
+#eletricMod{
+  display: none; 
+}
+
+.estraUltim{
+  position: relative;
+ right: 25%;
+  bottom: 240px;
+  width: 50%;
+}
+
+#estra01{
+  width: 85%;
+  height: 180px;
+}
+
+input[name="clienteEmpresa"], textarea {
+  width: 68%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="desmontadoPor"], textarea {
+  width: 68%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+
+
+select, textarea {
+  width: 10%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(220, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+
+}
+
+
+input[name="rolamnetoTras"], textarea {
+  width: 10%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="subs01"], textarea {
+  width: 7%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="tampDian"], textarea {
+  width: 12%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+
+input[name="subs02"], textarea {
+  width: 7%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="tampTras"], textarea {
+  width: 12%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="seloMec"], textarea {
+  width: 9%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="voluta"], textarea {
+  width: 12%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="subst"], textarea {
+  width: 12%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="gaxeta"], textarea {
+  width: 12%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="tampTrasBomb"], textarea {
+  width: 12%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+input[name="oring"], textarea {
+  width: 12%; /* Defina o tamanho desejado aqui */
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(270, 197, 197);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+#Dados_mais{
+  width: 89%;
+  height: 350px;
+}
+
+#extra_mais{
+  width: 89%;
+  height: 300px;
+}
+
+#obsDescricao{
+  width: 79%;
+  height: 64px;
+}
+
+#descriBomba{
+  width: 79%;
+  height: 64px;
+}
+
+h6{
+  position: relative;
+  left: 35%;
+}

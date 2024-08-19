@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Ordem de serviço VRF</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+img {
+  position: relative;
+  top: 110px;
+  left: 35%;
+}
+    </style>
+    </head>
+    <body>
+        <header class="header">
+            <nav>
+                <ul class="menu">
+        
+                    <li><a href="index.html">MENU </a></li>
+                    <li>
+                        <a href="#">Ordem de Serviço</a>
+                        <ul class="submenu">
+                            <li><a href="primeiro_cadastro.html">Ficha Entrada</a></li>
+                            <li><a href="ficha_eletrica.html">Ficha Elétrica</a></li>
+                            <li><a href="ficha_mecanica.html">Ficha Mecânica</a></li>
+                            <li><a href="anotacao.html">Ficha Anotação</a></li>
+                            <li><a href="ficha_saida.html">Ficha Saída</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Recibo</a>
+                        <ul class="submenu">
+                            <li><a href="recibo.html" target="_blank">Serviço</a></li>
+    
+                        </ul>
+                    </li>
+                    <li><a href="estoque.html">Controle de estoque</a></li>&emsp;&emsp;&emsp;
+                    <li><button id="generate-pdf" >SALVAR</button></li> &emsp;&emsp;
+                    <button class="fechar" onclick="fechar()">FECHAR</button>
+                </ul>
+            </nav>
+        </header>
+
+
+        <div class="texto">
+            <br/><br/>
+            <object data="texto.html" width="320px" height="650px"></object>
+        </div>
+        <nav>
+            <div class="imagem">
+            <div class="w3-content w3-section" >
+                <br/><br>
+                <img class="mySlides w3-animate-fading" src="Capturar.PNG" style="width:50%">
+                <img class="mySlides w3-animate-fading" src="https://th.bing.com/th/id/OIP.9jCW2fC5hGSD8bk_O4QnYAAAAA?w=251&h=189&c=7&r=0&o=5&dpr=1.3&pid=1.7" style="width:65%">
+                <img class="mySlides w3-animate-fading" src="https://th.bing.com/th/id/OIP.6nrhO2NfTRZGxtQoBdZKHAAAAA?w=208&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" style="width:65%">
+                <img class="mySlides w3-animate-fading" src="https://th.bing.com/th/id/OIP.OJQio5MAB2E7vShF4MjtiAAAAA?w=194&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" style="width:65%">
+              </div>
+            </div>
+              
+              <script>
+              var myIndex = 0;
+              carousel();
+              
+              function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                  x[i].style.display = "none";  
+                }
+                myIndex++;
+                if (myIndex > x.length) {myIndex = 1}    
+                x[myIndex-1].style.display = "block";  
+                setTimeout(carousel, 9000);    
+              }
+              </script>
+        </nav>
+    </body>
+    </html>

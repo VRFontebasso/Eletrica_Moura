@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem de Serviço</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="impressao.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+
+  .fechar {
+    z-index: 9999;
+  }
+
+    </style>
+
+</head>
+<body>
+  <header class="header">
+    <nav>
+        <ul class="menu">
+
+            <li><a href="index.html">MENU </a></li>
+            <li>
+                <a href="#">Ordem de Serviço</a>
+                <ul class="submenu">
+                    <li><a href="primeiro_cadastro.html">Ficha Entrada</a></li>
+                    <li><a href="ficha_eletrica.html">Ficha Elétrica</a></li>
+                    <li><a href="ficha_mecanica.html">Ficha Mecânica</a></li>
+                    <li><a href="anotacao.html">Ficha Anotação</a></li>
+                    <li><a href="ficha_saida.html">Ficha Saída</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Recibo</a>
+                <ul class="submenu">
+                    <li><a href="recibo.html" target="_blank">Serviço</a></li>
+
+                </ul>
+            </li>
+            <li><a href="estoque.html">Controle de estoque</a></li>&emsp;&emsp;&emsp;
+            <li><button id="generate-pdf" >SALVAR</button></li> &emsp;&emsp;
+            <button class="fechar" onclick="fechar()">Fechar</button>
+        </ul>
+    </nav>
+</header>
+<script>
+    function fechar() {
+      // Fecha a janela do navegador.
+      window.close();
+    }
+</script>
+<br/>
+<div id="conteudoTotal">
+  
+<div class="moura"><img src="Capturar.PNG" alt="img moura" width="30%"></div>
+<br><br>
+
+
+    <h1 class="dadosEntrada">FICHA DE DADOS E REPAROS ELÉTRICOS</h1>
+    <br/><br/><br/><br/><br/><br/><br/>
+
+    <div id="formulario1">
+
+    &emsp;&emsp;
+
+    <label for="cliente">Empresa/Cliente:</label>
+    <input type="text" id="cliente" name="cliente" required>
+
+    <h2>RESPONSÁVEL</h2>
+    <br/>
+
+    &emsp;&emsp;
+
+    <label for="cortador">Cortado por:</label>
+    <input type="text" id="cortador" name="cortador" required>
+
+    &emsp;
+
+    <label for="recebidos">Recebido por:</label>
+    <input type="text" id="recebidos" name="recebidos">
+
+    </div> <!-- formulario1 -->
+
+    <br/>
+
+    <h2>DADOS ELÉTRICOS TRIFÁSICOS</h2>
+
+    <br/>
+
+    <p id="outros_equip">OUTROS EQUIPAMENTOS</p>
+
+    <br/>
+    <div id="outrosEletri">
+    &emsp;&emsp;&emsp;&emsp;&ensp;
+    <label for="estra01"> Observações ou descrições extras:</label>
+      <br/><br>
+      &emsp;&emsp;&emsp;&emsp;&ensp;
+      <textarea name="estraTriMod" id="estra01"  rows="4" required class="descricao01"></textarea>
+    </div>
+
+
+      <script>
+        document.getElementById('outros_equip').addEventListener('click', function() {
+          var formulario = document.getElementById('outrosEletri');
+          if (formulario.style.display === 'block') {
+            formulario.style.display = 'none';
+          } else {
+            formulario.style.display = 'block';
+          }
+        });
+      
+          </script>
+
+
+
+    <P>DADOS ELÉTRICOS ORIGINAIS</P>
+
+    <br/><br/>
+
+    &emsp;&emsp;&emsp;
+
+    <label for="potencia">Potência:</label>
+    <input type="text" name="potenciaTri" id="rpm">
+
+    <label for="tensao">Tensão:</label>
+    <input type="text" name="tensaoTri" id="tensao">
+
+    <label for="rpm">RPM:</label>
+    <input type="text" name="rpmTri" id="rpm"> 
+
+    <label for="fio">Fio:</label>
+    <input type="text" name="fioTri" id="fio">
+
+    <br/>
+
+    &emsp;&emsp;&emsp;
+
+    <label for="passo">Passo:</label>
+    <input type="text" name="passoTri" id="passo"> 
+
+    <label for="canais">N° canais estator: </label>
+    <input type="text" name="canaisTri" id="canais"> 
+
+    <label for="grupo">N° de grupos: </label>
+    <input type="text" name="grupoTri" id="grupo"> 
+
+    <br/>
+
+    &emsp;&emsp;&emsp;
+
+    
+    <label for="bobina">N° bobinas grupo:</label>
+    <input type="text" name="bobinaTri" id="bobina"> &ensp;
+
+
+    <label for="ligacao">Ligação:</label>
+    <input type="text" name="ligacaoTri" id="ligacao">&emsp;
+    
+
+    <label for="espiras">Espiras</label>
+    <input type="text" name="espirasTri" id="espiras">
+
+    <br/>
+
+    &emsp;&emsp;&emsp;
+
+    <label for="diametro">Diametro interno:</label>
+    <input type="text" name="diamentroTri" id="diametro"> 
+
+    <label for="comprimento">Comprimento externo:</label>
+    <input type="text" name="comprimentoTri" id="comprimento">
+
+    <br/><br/><br/>
+
+    <P id="titulo">DADOS ELÉTRICOS MODIFICADOS</P>
+    <br/>
+   
+    <div id="formularioEleTrif">
+
+    <br/>
+
+    &emsp;&emsp;&emsp;&emsp;&ensp;
+
+    <label for="tensao">Tensão:</label>
+    <input type="text" name="tensaoTriMod" id="tensao">
+
+    <label for="ligacao">Ligação:</label>
+    <input type="text" name="ligacaoTriMod" id="ligacao">
+
+    <br/><br/>
+    &emsp;&emsp;&emsp;&emsp;&ensp;
+
+    <label for="fio">Fio:</label>
+    <input type="text" name="fioTriMod" id="fio">&ensp;&ensp;&ensp;&ensp;
+
+    <label for="espiras">Espiras:</label>
+    <input type="text" name="espirasTriMod" id="espiras">
+
+    <br/><br/>
+
+    &emsp;&emsp;&emsp;&emsp;&ensp;
+
+    <label for="estra">Observações ou descrições extras:</label>
+    <br/>
+    &emsp;&emsp;&emsp;&emsp;&ensp;
+    <textarea name="estraTriMod" id="estra"  rows="4" required class="descricao"></textarea>
+
+    </div> <!-- formularioEleTrif -->
+
+
+
+    <script>
+  document.getElementById('titulo').addEventListener('click', function() {
+    var formulario = document.getElementById('formularioEleTrif');
+    if (formulario.style.display === 'block') {
+      formulario.style.display = 'none';
+    } else {
+      formulario.style.display = 'block';
+    }
+  });
+
+    </script>
+
+
+
+    <br/>
+
+    <h2>DADOS ELÉTRICOS MONOFÁSICOS</h2>
+    <p>DADOS ELÉTRICOS ORIGINAIS</p>
+
+    <br/><br/>
+
+   <div class="formularioEleMono">
+
+    <table>
+          <tr>
+            <th>&emsp;&emsp; AUXILIAR</th>
+            <th>&emsp;&emsp; PRINCIPAL</th>
+          </tr>
+          <tr>
+            <td>
+              <label for="passoAUX">Passo:</label>
+              <br/>
+                <input type="text" placeholder="&emsp;&ensp;Digite..." id="passoAUX" name="passoAux">
+                 <br/>
+                <label for="fioAux">Fio:</label>
+                <br/>
+                <input type="text" placeholder="&emsp;&ensp;Digite..." id="fioAUX" name="fioAux">
+                <label for="espirasAUX">Espiras:</label>
+                <br/>
+                <input type="text" placeholder="&emsp;&ensp;Digite..." id="espirasAUX" name="espirasAux">
+            </td>
+            <td>
+              <label for="passoPrinc">Passo:</label>
+              <br/>
+                <input type="text" placeholder="&emsp;&ensp;Digite..." id="passoPrin" name="passoPrin">
+                <br/>
+                <label for="fioPrinc">Fio:</label>
+              <br/>
+                <input type="text" placeholder="&emsp;&ensp;Digite..." id="fioPrin" name="fioPrin">
+                <label for="espirasPrinc">Espiras:</label>
+              <br/>
+                <input type="text" placeholder="&emsp;&ensp;Digite..." id="espirasPrin" name="espirasPrin">
+            </td>
+          </tr>
+      </table>
+
+    </div>
+      
+      <div class="dadosEletricosOrigi">
+
+        &emsp;&emsp;&emsp;&emsp;
+  
+        <label for="potenciaEletricOrigi">Potência:</label>
+        <input type="text" name="potenciaEletricOrigi" id="potenciaEletricOrigi">
+  
+        <label for="tensaoEletricOrigi">Tensão:</label>
+        <input type="text" name="tensaoEletricOrigi" id="tensaoEletricOrigi">
+  
+        <br/>
+
+        &emsp;&emsp;&emsp;&emsp;
+  
+        <label for="rpmEletricOrigi">RPM:</label>
+        <input type="text" name="rpmEletricOrigi" id="rpmEletricOrigi">
+
+        <label for="ligacaoEletricOrigi">Ligação:</label>
+        <input type="text" name="ligacaoEletricOrigi" id="ligacaoEletricOrigi">
+  
+        <br/>
+  
+        &emsp;&emsp;&emsp;&emsp;
+  
+        <label for="exEstatorEletricOrigi">Comprimento externo do estator:</label>
+        <input type="text" name="exEstatorEletricOrigi" id="exEstatorEletricOrigi">
+  
+        <br/>
+  
+        &emsp;&emsp;&emsp;&emsp;
+  
+        <label for="inEstatorEletricOrigi">Diametro interno do estator:</label>
+        <input type="text" name="inEstatorEletricOrigi" id="inEstatorEletricOrigi">
+  
+        
+    </div> <!-- formularioEleMono -->
+    <div>
+    <br/><br/><br/>
+      <div class="nomeP">
+    <p id="titulo1">DADOS ELÉTRICOS MODIFICADOS</p>
+  
+    <br/>
+ 
+    <div id="eletricMod">
+    <table>
+
+
+        <tr>
+          <br/>
+          <th>&emsp;&emsp; AUXILIAR</th>
+          <th>&emsp;&emsp; PRINCIPAL</th>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="passoAUX1">Passo:</label>
+            <br/>
+              <input type="text" placeholder="&emsp;&ensp;Digite..." id="passoAUX" name="passoAux">
+              <br/>
+              <label for="fioAux">Fio:</label>
+              <br/>
+              <input type="text" placeholder="&emsp;&ensp;Digite..." id="fioAUX" name="fioAux">
+              <label for="espirasAUX">Espiras:</label>
+              <br/>
+              <input type="text" placeholder="&emsp;&ensp;Digite..." id="espirasAUX" name="espirasAux">
+          </td>
+          <td>
+            <label for="passoPrinc">Passo:</label>
+            <br/>
+              <input type="text" placeholder="&emsp;&ensp;Digite..." id="passoPrin" name="passoPrin">
+              <br/>
+              <label for="fioPrinc">Fio:</label>
+            <br/>
+              <input type="text" placeholder="&emsp;&ensp;Digite..." id="fioPrin" name="fioPrin">
+              <label for="espirasPrinc">Espiras:</label>
+            <br/>
+              <input type="text" placeholder="&emsp;&ensp;Digite..." id="espirasPrin" name="espirasPrin">
+          </td>
+        </tr>
+    </table>
+
+    <div class="estraUltim">
+      &emsp;
+  
+      <label for="estra01">Observações ou descrições extras:</label>
+      <br/><br>
+      &emsp;&emsp;&emsp;&emsp;&ensp;
+      <textarea name="estraTriMod" id="estra01"  rows="4" required class="descricao01"></textarea>
+    </div>
+  
+  <script>
+    document.getElementById('titulo1').addEventListener('click', function() {
+      var formulario = document.getElementById('eletricMod');
+      if (formulario.style.display === 'block') {
+        formulario.style.display = 'none';
+      } else {
+        formulario.style.display = 'block';
+      }
+    });
+  
+      </script>
+
+    </div>
+
+
+
+    
+    </div>
+
+
+  </div> 
+</div>
+
+</div>
+
+
+
+  </body>
+</html>

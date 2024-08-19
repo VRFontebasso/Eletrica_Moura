@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem de Serviço</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="impressao.js"></script>
+    <script src="script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/selectize/dist/css/selectize.default.css" rel="stylesheet" />
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul class="menu">
+    
+                <li><a href="index.html">MENU </a></li>
+                <li>
+                    <a href="#">Ordem de Serviço</a>
+                    <ul class="submenu">
+                        <li><a href="primeiro_cadastro.html">Ficha Entrada</a></li>
+                        <li><a href="ficha_eletrica.html">Ficha Elétrica</a></li>
+                        <li><a href="ficha_mecanica.html">Ficha Mecânica</a></li>
+                        <li><a href="anotacao.html">Ficha Anotação</a></li>
+                        <li><a href="ficha_saida.html">Ficha Saída</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Recibo</a>
+                    <ul class="submenu">
+                        <li><a href="recibo.html" target="_blank">Serviço</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="estoque.html">Controle de estoque</a></li>&emsp;&emsp;&emsp;
+                <li><button id="generate-pdf" >SALVAR</button></li> &emsp;&emsp;
+                <button class="fechar" onclick="fechar()">Fechar</button>
+            </ul>
+        </nav>
+    </header>
+    
+
+<div id="conteudoTotal">
+<br/>
+<div class="moura"><img src="Capturar.PNG" alt="img moura" width="30%"></div>
+<br/>
+    <h1 class="dadosEntrada">FICHA DE DADOS E REPAROS MECÂNICOS</h1>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+    &emsp;&emsp;
+    <label for="clienteEmpresa">Cliente/Empresa:</label>
+    <input type="text" name="clienteEmpresa" id="clienteEmpresa">
+    <h2>RESPONSÁVEL:</h2>
+    <br>
+    &emsp;&emsp;
+    <label for="desmontadoPor">Desmontado por:</label>
+    <input type="text" name="desmontadoPor" id="desmontadoPor">
+    <h2>DADOS MECÂNICOS</h2>
+    <P>MOTOR/GERADOR</P>
+    <br/>
+    &emsp;&emsp;
+
+    
+<label for="rolamentoDian">Rolamento Dianteiro n°:</label>&ensp;
+<select name="rolamentoDian" id="rolamentoDian"></select>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const rolamentos = [
+            "", "6200", "6201", "6101 1/2", "6202", "6203", "6204", "6205", "6206", "6207", "6208",
+            "6209", "6210", "6211", "6212", "6213", "6214", "6215", "6216", "6218", "6300",
+            "6301", "6302", "6303", "6304", "6305", "6306", "6307", "6308", "6309", "6310",
+            "6311", "6312", "6313", "6314", "6315", "6316", "6318", "606", "607", "608", "609",
+            "624", "625", "626", "627", "628", "629", "6000", "6001", "6002", "6003", "6004",
+            "6005", "6006", "6007", "6008", "6009"
+        ];
+
+        const selectElement = document.getElementById('rolamentoDian');
+        
+        rolamentos.forEach(function(rolamento) {
+            const option = document.createElement('option');
+            option.value = rolamento;
+            option.textContent = rolamento;
+            selectElement.appendChild(option);
+        });
+    });
+</script>
+
+    &ensp;
+    <label for="subs01">Substituição:</label>&ensp;
+    <input list="Subs01" type="text" name="subs01" id="subs01">  
+    <datalist id="Subs01">
+        <option value="Sim"></option>
+        <option value="Não"></option>
+    </datalist>
+    &ensp;
+    <label for="tampDian">Tampa Dianteira: </label>
+    <input list="TampDian" type="text" name="tampDian" id="tampDian">
+    <datalist id="TampDian">
+        <option value="Bom"></option>
+        <option value="Usinado"></option>
+        <option value="Substituído"></option>
+    </datalist>
+    <br/>
+    &emsp;&emsp;
+
+
+    
+
+
+    <label for="rolamentoTras">Rolamento Traseiro n°: &emsp;</label>
+
+    <select name="rolamentoTras" id="rolamentoTras"></select>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const rolamentos = [
+            "", "6200", "6201", "6101 1/2", "6202", "6203", "6204", "6205", "6206", "6207", "6208",
+            "6209", "6210", "6211", "6212", "6213", "6214", "6215", "6216", "6218", "6300",
+            "6301", "6302", "6303", "6304", "6305", "6306", "6307", "6308", "6309", "6310",
+            "6311", "6312", "6313", "6314", "6315", "6316", "6318", "606", "607", "608", "609",
+            "624", "625", "626", "627", "628", "629", "6000", "6001", "6002", "6003", "6004",
+            "6005", "6006", "6007", "6008", "6009"
+        ];
+
+        const selectElement = document.getElementById('rolamentoTras');
+        
+        rolamentos.forEach(function(rolamento) {
+            const option = document.createElement('option');
+            option.value = rolamento;
+            option.textContent = rolamento;
+            selectElement.appendChild(option);
+        });
+    });
+</script>
+
+    
+    &ensp;
+    <label for="subs02">Substituição:</label>&ensp;
+    <input list="Subs02" type="text" name="subs02" id="subs02">  
+    <datalist id="Subs02">
+        <option value="Sim"></option>
+        <option value="Não"></option>
+    </datalist>
+    &ensp;
+    <label for="tampTras">Tampa Traseira:</label>
+    <input list="tampTraseira" type="text" name="tampTras" id="tampTras">
+    <datalist id="tampTraseira">
+        <option value="Bom"></option>
+        <option value="Usinado"></option>
+        <option value="Substituído"></option>
+    </datalist>
+    <hr>
+    <br/>
+    &emsp;&emsp;
+    <label for="ventoinha">Ventoinha:</label>
+    <input list="ventoinhaMot" type="text" name="ventoinha" id="ventoinha">
+    <datalist id="ventoinhaMot">
+        <option value="Bom"></option>
+        <option value="Substituído"></option>
+    </datalist>
+    &emsp;&emsp;&ensp;
+    <label for="defletora">Defletora:</label>
+    <input list="defletoraMot" type="text" name="defletora" id="defletora">
+    <datalist id="defletoraMot">
+        <option value="Bom"></option>
+        <option value="Substituído"></option>
+    </datalist>
+    &emsp;&emsp;&ensp;
+    <label for="eixo">Eixo:</label>
+    <input list="eixoMot" type="text" name="eixo" id="eixo">
+    <datalist id="eixoMot">
+        <option value="Bom"></option>
+        <option value="Usinado"></option>
+        <option value="Substituído"></option>
+    </datalist>
+    <hr>
+    <br/>
+    &emsp;&emsp;&emsp;&emsp;
+    <label for="obsDescricao">Outras descrições ou observações:</label>
+    <br/><br/>
+    &emsp;&emsp;&emsp;&emsp;
+    <textarea name="obsDescricao" id="obsDescricao" ></textarea>
+    <p>BOMBA</p>
+    <br/>
+    &emsp;&emsp;
+    <label for="eixoSemi">Eixo/Semi Eixo:</label>
+    <input list="eixoSemiEixo" type="text" name="eixoSemi" id="eixoSemi">
+    <datalist id="eixoSemiEixo">
+        <option value="Bom"></option>
+        <option value="Usinado"></option>
+        <option value="Substituído"></option>
+    </datalist>
+    &emsp;&emsp;&emsp;&emsp;&ensp;
+    <label for="rotor">Rotor:</label>
+    <input list="rotorMot" type="text" name="rotor" id="rotor">
+    <datalist id="rotorMot">
+        <option value="Bom"></option>
+        <option value="Usinado"></option>
+        <option value="Substituído"></option>
+    </datalist>
+    <hr>
+    <br/>
+    &emsp;&emsp;
+    <label for="voluta">Tampa Dianteira/Voluta:</label>
+    <input list="volutaTamp" type="text" name="voluta" id="voluta">
+    <datalist id="volutaTamp">
+        <option value="Bom"></option>
+        <option value="Usinado"></option>
+        <option value="Substituído"></option>
+    </datalist>
+    &ensp;
+    <label for="seloMec">Selo Mecânico:</label>
+    <input list="seloMecanico" type="text" name="seloMec" id="seloMec">
+    <datalist id="seloMecanico">
+        <option value="2 ' "> &emsp;</option>
+        <option value="1 3/4 ' "> &emsp;</option>
+        <option value="1 5/8 ' "> &emsp;</option>
+        <option value="1 1/2 ' ">&emsp;</option>
+        <option value="1 3/8 ' ">&emsp;</option>
+        <option value="1 1/4 ' ">&emsp;</option>
+        <option value="1 1/8 ' ">&emsp;</option>
+        <option value="1 ' ">&emsp;</option>
+        <option value="7/8 ' ">&emsp;</option>
+        <option value="3/4 ' ">&emsp;</option>
+        <option value="5/8 ' ">&emsp;</option>
+        <option value="1/2 ' ">&emsp;</option>
+        <option value="7/16 ' ">&emsp;</option>
+        <option value="11 mm">&emsp;</option>
+        <option value="12 mm ">&emsp;</option>
+        <option value="13 mm ">&emsp;</option>
+        <option value="14 mm ">&emsp;</option>
+        <option value="15 mm ">&emsp;</option>
+        <option value="16 mm ">&emsp;</option>
+        <option value="17 mm ">&emsp;</option>
+        <option value="18 mm ">&emsp;</option>
+        <option value="19 mm ">&emsp;</option>
+        <option value="20 mm ">&emsp;</option>
+    </datalist>
+    &ensp;
+    <label for="subst">Substituição:</label>
+    <input list="substituicao" type="text" name="subst" id="subst">
+    <datalist id="substituicao">
+        <option value="Bom"></option>
+        <option value="Substituido"></option>
+    </datalist>
+    <br/>
+    &emsp;&emsp;
+    <label for="tampTrasBomb">Tampa Traseira:</label>
+    <input list="trasBomb" type="text" name="tampTrasBomb" id="tampTrasBomb">
+    <datalist id="trasBomb">
+        <option value="Bom"></option>
+        <option value="Usinado"></option>
+        <option value="Substituído"></option>
+    </datalist>
+    &ensp;
+    <label for="gaxeta">Gaxeta substituição:</label>
+    <input list="gaxetaSubs" type="text" name="gaxeta" id="gaxeta">
+    <datalist id="gaxetaSubs">
+        <option value="Bom"></option>
+        <option value="Substituido"></option>
+    </datalist>
+    &ensp;
+    <label for="oring">Oring/Junta:</label>
+    <input list="oringJunta" type="text" name="oring" id="oring">
+    <datalist>
+        <option value="Bom"></option>
+        <option value="Substituido"></option>
+    </datalist>
+    <hr>
+    <br/>
+    &emsp;&emsp;&emsp;&emsp;
+    <label for="descriBomba">Outras descrições ou observações:</label>
+    <br/><br/>
+    &emsp;&emsp;&emsp;&emsp;
+    <textarea name="descriBomba" id="descriBomba" ></textarea>
+
+    <p>OUTROS EQUIPAMENTOS</p>
+
+    <br/>
+    <label for="estra01"> &emsp;&emsp; Observações ou descrições extras:</label>
+      <br/><br>
+      &emsp;&emsp;&emsp;&emsp;&ensp;
+      <textarea name="estraTriMod" id="estra01"  rows="4" required class="descricao01"></textarea>
+    </div>
+
+    <br/><br/><br/>
+</div>
+</body>
+</html>

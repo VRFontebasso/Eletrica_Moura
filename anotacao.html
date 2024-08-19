@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem de Serviço</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul class="menu">
+    
+                <li><a href="index.html">MENU </a></li>
+                <li>
+                    <a href="#">Ordem de Serviço</a>
+                    <ul class="submenu">
+                        <li><a href="primeiro_cadastro.html">Ficha Entrada</a></li>
+                        <li><a href="ficha_eletrica.html">Ficha Elétrica</a></li>
+                        <li><a href="ficha_mecanica.html">Ficha Mecânica</a></li>
+                        <li><a href="anotacao.html">Ficha Anotação</a></li>
+                        <li><a href="ficha_saida.html">Ficha Saída</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Recibo</a>
+                    <ul class="submenu">
+                        <li><a href="recibo.html" target="_blank">Pagamento</a></li>
+                        <li><a href="#">Orçamento</a></li>
+                        <li><a href="#">A pagar</a></li>
+                        <li><a href="excel.html" target="_blank">EXCEL</a></li>
+                    </ul>
+                </li>
+                <li><a href="estoque.html">Controle de estoque</a></li>&emsp;&emsp;&emsp;
+                <li><button id="generate-pdf" >SALVAR</button></li> &emsp;&emsp;
+                <button class="fechar" onclick="fechar()">Fechar</button>
+            </ul>
+        </nav>
+    </header>
+
+    
+<script>
+    function fechar() {
+      // Fecha a janela do navegador.
+      window.close();
+    }
+</script>
+    
+<div id="conteudoTotal">
+    
+    <br/>
+
+<div class="moura"><img src="Capturar.PNG" alt="img moura" width="30%"></div>
+    <h1 class="dadosEntrada">FICHA DE ANOTAÇÃO E PERSONALIZAÇÃO</h1>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+    &emsp;&emsp;
+
+    <label for="cliente">Empresa/Cliente:</label>
+    <input type="text" id="cliente" name="cliente" required>
+
+    <br/>  <hr>  <br/>
+
+    <div id="Dados_mais">
+        &emsp;&emsp;&ensp;
+        <label for="Dados_dd"> DADOS DO EQUIPAMENTO OU ANOTAÇÃO</label>
+          <br/><br/>
+          &emsp;&emsp;&ensp;
+          <textarea name="Dados_mais_dd" id="Dados_mais"  rows="4" required class="Dados_mais_x"></textarea>
+        </div>
+
+    </div>
+
+</body>
+</html>
